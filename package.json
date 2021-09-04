@@ -1,0 +1,23 @@
+{
+  "name": "nethernite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://yarymaks.github.io/nethernite/",
+  "scripts": {
+    "dev": "parcel dist/*.html -d dev/",
+    "build": "parcel build dist/*.html -d build/",
+    "predeploy": "npm run build -- --public-url=/nethernite/",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yarymaks/nethernite.git"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3",
+    "parcel-bundler": "^1.12.4",
+    "posthtml-include": "^1.4.3",
+    "sass": "^1.26.9"
+  }
+}

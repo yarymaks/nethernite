@@ -1,0 +1,56 @@
+// для шрифта
+@mixin font($fsz, $fw, $color, $lh) {
+  font-size: $fsz;
+  font-weight: $fw;
+  color: $color;
+  line-height: $lh;
+}
+// флекс
+@mixin flex($type: flex, $direction: row, $justcont: center, $ai: center) {
+  display: $type;
+  flex-direction: $direction;
+  justify-content: $justcont;
+  align-items: $ai;
+}
+// забор
+@mixin bordered($sz, $type, $color, $br: 1px) {
+  border: $sz $type $color;
+  border-radius: $br;
+}
+// для анимации
+@mixin trans($type, $prop, $time: 0.25s, $func: $timing) {
+  #{$type}: #{$prop};
+  transition: $type $time $func;
+}
+// медиа
+@mixin for-size($range) {
+  $mobile: 360px;
+  $tablet: 768px;
+  $desktop: 1200px;
+
+  @if $range == mobile {
+    @media screen and (min-width: $mobile) and (max-width: $tablet - 1) {
+      @content;
+    }
+  } @else if $range == mobile-tablet {
+    @media screen and (max-width: #{$tablet - 1px}) {
+      @content;
+    }
+  } @else if $range == tablet {
+    @media screen and (min-width: $tablet) {
+      @content;
+    }
+  } @else if $range == tablet-only {
+    @media screen and (min-width: $tablet) and (max-width: #{$desktop - 1px}) {
+      @content;
+    }
+  } @else if $range == todesktop {
+    @media screen and (max-width: #{$desktop - 1px}) {
+      @content;
+    }
+  } @else if $range == desktop {
+    @media screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+}

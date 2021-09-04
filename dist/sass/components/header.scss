@@ -1,0 +1,45 @@
+.header {
+  height: 50px;
+  background-color: $main-color;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statistics {
+  display: flex;
+  color: $white-color;
+}
+
+.statistics__container {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  position: relative;
+  font-weight: 700;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -16px;
+    width: 30px;
+    height: 30px;
+    background-image: url('./../images/icons/crystals.svg');
+    background-repeat: no-repeat;
+  }
+  &:nth-child(1) {
+    margin-right: 25px;
+    &:before {
+      background-image: url('./../images/icons/coins.svg');
+    }
+  }
+}
+.statictics__title {
+  width: 70px;
+  text-align: center;
+  border-radius: 100px 0px 0px 100px;
+  background-color: $background-color;
+}

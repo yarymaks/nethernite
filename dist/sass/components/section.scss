@@ -2,7 +2,7 @@
   background-color: $main-color;
   @include for-size(desktop) {
     height: 100vh;
-    background-image: url('../images/desktop/background.png');
+    background-image: url('../images/desktop/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top -10px left;
@@ -11,7 +11,7 @@
       screen and (-o-min-device-pixel-ratio: 2/1),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: url('../images/desktop/background@x2.png');
+      background-image: url('../images/desktop/background@x2.jpg');
     }
   }
 }
@@ -53,7 +53,7 @@
 }
 
 .boxes {
-  background-image: url('../images/mobile/background.png');
+  background-image: url('../images/mobile/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top -10px left;
@@ -63,7 +63,7 @@
     screen and (-o-min-device-pixel-ratio: 2/1),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: url('../images/mobile/background@x2.png');
+    background-image: url('../images/mobile/background@x2.jpg');
   }
   @include for-size(desktop) {
     background-image: none;
@@ -193,7 +193,7 @@
       rgba(36, 35, 51, 0) 57.29%,
       #242333 100%
     ),
-    url('./../images/mobile/frame.png'), url('./../images/mobile/mask.png');
+    url('./../images/mobile/frame.jpg'), url('./../images/mobile/mask.jpg');
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
   @include for-size(tablet) {
     height: 200px;

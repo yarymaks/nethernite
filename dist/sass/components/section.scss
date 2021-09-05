@@ -266,6 +266,13 @@
   }
 }
 
+.boxes__list_coins .boxes__price {
+  &::before {
+    left: -17px;
+    background-image: url('./../images/icons/crystals_btn.svg');
+  }
+}
+
 .boxes__text {
   margin: 6px 0 7px;
   font-family: 'Roboto';

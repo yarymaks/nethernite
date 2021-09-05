@@ -1,14 +1,33 @@
 .main {
   background-color: $main-color;
+  @include for-size(desktop) {
+    height: 100vh;
+    background-image: url('../images/desktop/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top -10px left;
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (-webkit-min-device-pixel-ratio: 2),
+      screen and (-o-min-device-pixel-ratio: 2/1),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/desktop/background@x2.png');
+    }
+  }
 }
 
+.pages {
+  @include for-size(desktop) {
+    padding-top: 10px;
+  }
+}
 .pages__container {
   height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.pages__title {
+.active .pages__title {
   &:before {
     content: '';
     position: absolute;
@@ -18,18 +37,37 @@
     height: 3px;
     background: $active-link-gradient;
     opacity: 0.25;
+    @include for-size(desktop) {
+      left: 0;
+      width: 100%;
+    }
   }
   &:nth-child(1):before {
     left: -5px;
     width: 115%;
+    @include for-size(desktop) {
+      left: 0;
+      width: 100%;
+    }
   }
 }
 
 .boxes {
-  height: 540px;
   background-image: url('../images/mobile/background.png');
-  background-size: auto;
-  background-position: top -20px left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top -10px left;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (-webkit-min-device-pixel-ratio: 2),
+    screen and (-o-min-device-pixel-ratio: 2/1),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('../images/mobile/background@x2.png');
+  }
+  @include for-size(desktop) {
+    background-image: none;
+  }
 }
 
 .boxes_center {
@@ -38,6 +76,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 540px;
+  @include for-size(desktop) {
+    height: unset;
+  }
 }
 
 .boxes__container {
@@ -48,25 +90,45 @@
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   overflow: hidden;
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(68, 67, 92, 0) 29.69%,
-      rgba(36, 35, 51, 0) 57.29%,
-      #242333 100%
-    );
+  overflow-y: scroll;
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: linear-gradient(
+  //     180deg,
+  //     rgba(68, 67, 92, 0) 84%,
+  //     rgba(36, 35, 51, 0) 57%,
+  //     #242333 100%
+  //   );
+  // }
+  @include for-size(tablet) {
+    width: 600px;
+  }
+  @include for-size(desktop) {
+    height: 560px;
+    width: 980px;
   }
 }
 
 .brsplit {
   @include for-size(tablet) {
     display: none;
+  }
+}
+.boxes__headtitle {
+  display: none;
+  margin-top: 20px;
+  color: $white-color;
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.23;
+  @include for-size(desktop) {
+    display: block;
   }
 }
 
@@ -77,8 +139,46 @@
   grid-auto-flow: row;
   grid-gap: 10px;
   justify-content: center;
-  padding-top: 18px;
+  padding: 18px 0;
   border-radius: 10px;
+  @include for-size(tablet) {
+    grid-template-columns: repeat(3, 150px);
+    grid-gap: 20px;
+    padding-top: 30px;
+  }
+  @include for-size(desktop) {
+    grid-template-columns: repeat(4, 215px);
+    grid-gap: 20px;
+    padding: 25px 0;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border: 1px solid #9794c6;
+    opacity: 0.1;
+  }
+}
+.boxes__list_mobile {
+  display: grid;
+  @include for-size(desktop) {
+    display: none;
+  }
+}
+.boxes__list_desktop {
+  display: none;
+  @include for-size(desktop) {
+    display: grid;
+  }
+}
+.boxes__list_coins {
+  display: none;
+  @include for-size(desktop) {
+    display: grid;
+  }
 }
 
 .boxes__card {
@@ -95,30 +195,56 @@
     ),
     url('./../images/mobile/frame.png'), url('./../images/mobile/mask.png');
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  @include for-size(tablet) {
+    height: 200px;
+    width: 150px;
+    background-size: cover;
+  }
+  @include for-size(desktop) {
+    height: 300px;
+    width: 215px;
+  }
 }
 
 .boxes__coinimage {
   width: 13px;
   transform: rotate(45deg);
 }
-
+.boxes__colorbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 20px;
+  transform: translate(-30px, 19px) rotate(-45deg);
+  background: linear-gradient(53.76deg, #ff4910 10.28%, #ff4910 87.14%);
+  @include for-size(desktop) {
+    width: 200px;
+    height: 25px;
+    transform: translate(-64px, 36px) rotate(-45deg);
+  }
+}
 .boxes__coin {
   position: relative;
   display: flex;
   justify-content: center;
+  width: 75px;
   font-family: 'Roboto';
   font-weight: 700;
   font-size: 11px;
   color: #ffffff;
-  z-index: 3;
   background-image: linear-gradient(
-      227.77deg,
-      rgba(220, 43, 25, 0) 19.26%,
-      #dc2b19 93.74%
-    ),
-    linear-gradient(53.76deg, #ff4910 10.28%, #ff4910 87.14%);
-  z-index: 100;
-  transform: translate(-43px, 19px) rotate(-45deg);
+    227.77deg,
+    rgba(220, 43, 25, 0) 19.26%,
+    #dc2b19 93.74%
+  );
+  transform: translate(-18px, 23px) rotate(-45deg);
+  @include for-size(desktop) {
+    width: 150px;
+    font-size: 13px;
+    line-height: 1.62;
+    transform: translate(-40px, 39px) rotate(-45deg);
+  }
 }
 
 .boxes__price {
@@ -132,6 +258,11 @@
     height: 17px;
     background-image: url('./../images/icons/crystals_btn.svg');
     background-repeat: no-repeat;
+    @include for-size(desktop) {
+      left: -13px;
+      top: 0;
+      background-image: url('./../images/desktop/dollar.svg');
+    }
   }
 }
 
@@ -141,18 +272,35 @@
   color: $white-color;
   text-align: center;
   line-height: 1.44;
+  @include for-size(desktop) {
+    line-height: 1.57;
+    margin: 0 0 15px;
+  }
 }
 
 .boxes__title {
   font-weight: 700;
   font-size: 20px;
+  @include for-size(desktop) {
+    font-size: 30px;
+  }
 }
 
 .boxes__desc {
   font-weight: 400;
   font-size: 11px;
+  @include for-size(desktop) {
+    font-size: 14px;
+    line-height: 1.57;
+  }
 }
 
 .boxes__image {
   margin: 10px auto 0;
+  @include for-size(desktop) {
+    height: 120px;
+  }
+}
+.boxes__list_coins .boxes__image {
+  margin: 25px auto 0;
 }

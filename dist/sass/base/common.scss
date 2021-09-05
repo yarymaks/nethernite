@@ -1,3 +1,9 @@
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #264061 #f0f1f3;
+  scrollbar-width: thin;
+  background-color: $background-main-color;
+}
 body {
   font-family: 'Leksa Sans';
   overflow-x: hidden;
@@ -7,4 +13,22 @@ svg {
   display: block;
   max-width: 100%;
   height: auto;
+}
+*::-webkit-scrollbar {
+  width: 3px;
+  @include for-size(tablet) {
+    width: 6px;
+  }
+}
+
+*::-webkit-scrollbar-thumb {
+  background: $btn-gradient;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #7c8ca0;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #9794c6;
 }

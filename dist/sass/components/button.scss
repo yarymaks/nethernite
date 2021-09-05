@@ -13,6 +13,11 @@
   box-shadow: 0px 2px 15px rgba(33, 204, 20, 0.5);
   border-radius: 3px;
   background: $btn-plus-gradient;
+  @include for-size(desktop) {
+    z-index: 1;
+    width: 27px;
+    height: 25px;
+  }
 }
 .button_card {
   justify-content: space-between;
@@ -26,4 +31,11 @@
   border-radius: 145px;
   color: $white-color;
   background: $btn-gradient;
+  @include for-size(desktop) {
+    width: 150px;
+    padding: 15px 30px;
+    font-size: 14px;
+    background: linear-gradient(90deg, #242333 0%, #3c3b53 100%);
+    border: 2px solid #cb4cbc;
+  }
 }

@@ -59,6 +59,11 @@
       }
     }
   }
+  @include trans(transform, scale(1));
+  &:hover,
+  &:focus {
+    @include trans(transform, scale(1.05));
+  }
 }
 .statictics__title {
   width: 70px;

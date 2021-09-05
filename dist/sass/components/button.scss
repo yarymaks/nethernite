@@ -32,4 +32,67 @@
     background: $btn-card-bg;
     @include bordered(2px, solid, $btn-card-border, 145px);
   }
+  @include trans(color, $white-color);
+  &:hover,
+  &:focus {
+    @include trans(color, $btn-plus-color);
+  }
+}
+
+.pages__button {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  @include flex();
+  @include font(14px, 700, $notactive-color, 1);
+  @include trans(color, $notactive-color);
+  @include for-size(desktop) {
+    width: 100%;
+    font-size: 20px;
+    background: $pages-link-color;
+    border-radius: 10px 10px 0px 0px;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  &:hover,
+  &:focus {
+    @include trans(color, $white-color);
+  }
+}
+.pages__button.active {
+  position: relative;
+  padding: 0 12px;
+  color: $white-color;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60%;
+    height: 3px;
+    transform: translateX(-50%);
+    background: $active-link-gradient;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    width: 115%;
+    height: 100%;
+    background: $link-gradient;
+    opacity: 0.1;
+    @include for-size(tablet) {
+      width: 100%;
+      left: 0;
+    }
+  }
+  @include trans(color, $white-color);
+  &:hover,
+  &:focus {
+    @include trans(color, $btn-card-border);
+  }
 }

@@ -1,57 +1,10 @@
-.link {
-  word-wrap: break-word;
-}
-.pages__link {
-  height: 100%;
-  @include flex();
-  @include font(14px, 700, $notactive-color, 1);
-  @include for-size(desktop) {
-    width: 100%;
-    font-size: 20px;
-    background: $pages-link-color;
-    border-radius: 10px 10px 0px 0px;
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-}
-.pages__link.active {
-  position: relative;
-  padding: 0 12px;
-  color: $white-color;
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 60%;
-    height: 3px;
-    transform: translateX(-50%);
-    background: $active-link-gradient;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -5px;
-    width: 115%;
-    height: 100%;
-    background: $link-gradient;
-    opacity: 0.1;
-    @include for-size(desktop) {
-      width: 100%;
-      left: 0;
-    }
-  }
-}
-
 .link__header {
   @include flex();
   width: 140px;
   height: 50px;
   position: relative;
   z-index: 1;
+  @include trans(transform, scale(1));
   @include for-size(desktop) {
     &:before {
       content: '';
@@ -63,6 +16,10 @@
       opacity: 0.1;
       @include bordered(2px, solid, $header-link-border, 50px);
     }
+  }
+  &:hover,
+  &:focus {
+    @include trans(transform, scale(1.25));
   }
 }
 .link__title {

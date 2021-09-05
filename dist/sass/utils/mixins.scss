@@ -18,7 +18,7 @@
   border-radius: $br;
 }
 // для анимации
-@mixin trans($type, $prop, $time: 0.25s, $func: $timing) {
+@mixin trans($type, $prop, $time: 0.5s, $func: $timing) {
   #{$type}: #{$prop};
   transition: $type $time $func;
 }

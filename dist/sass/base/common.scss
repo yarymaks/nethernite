@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  scrollbar-color: #264061 #f0f1f3;
+  scrollbar-color: $scroll-color;
   scrollbar-width: thin;
   background-color: $background-main-color;
 }
@@ -26,9 +26,9 @@ svg {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #7c8ca0;
+  background-color: $scrollbar-thumb-color;
 }
 
 *::-webkit-scrollbar-track {
-  background-color: #9794c6;
+  background-color: $notactive-color;
 }

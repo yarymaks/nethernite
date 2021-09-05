@@ -2,20 +2,13 @@
   word-wrap: break-word;
 }
 .pages__link {
-  font-family: 'Leksa Sans';
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 1;
-  color: $notactive-color;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  @include flex();
+  @include font(14px, 700, $notactive-color, 1);
   @include for-size(desktop) {
     width: 100%;
     font-size: 20px;
-    background: #323145;
+    background: $pages-link-color;
     border-radius: 10px 10px 0px 0px;
     &:not(:last-child) {
       margin-right: 10px;
@@ -24,8 +17,8 @@
 }
 .pages__link.active {
   position: relative;
-  color: $white-color;
   padding: 0 12px;
+  color: $white-color;
   &:before {
     content: '';
     position: absolute;
@@ -44,7 +37,7 @@
     left: -5px;
     width: 115%;
     height: 100%;
-    background: linear-gradient(0deg, #f52cbf 0%, rgba(245, 44, 191, 0) 100%);
+    background: $link-gradient;
     opacity: 0.1;
     @include for-size(desktop) {
       width: 100%;
@@ -54,9 +47,7 @@
 }
 
 .link__header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex();
   width: 140px;
   height: 50px;
   position: relative;
@@ -69,21 +60,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 50px;
-      border-width: 2px;
-      border-style: solid;
-      border-color: #929094;
       opacity: 0.1;
+      @include bordered(2px, solid, $header-link-border, 50px);
     }
   }
 }
 .link__title {
   display: none;
-  font-size: 18px;
-  color: $white-color;
   text-transform: uppercase;
-  font-weight: 700;
-  line-height: 1.22;
+  @include font(18px, 700, $white-color, 1.22);
   @include for-size(desktop) {
     display: block;
   }

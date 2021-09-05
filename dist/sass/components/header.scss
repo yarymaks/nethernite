@@ -7,17 +7,14 @@
 }
 
 .header__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex($justcont: space-between);
   height: 100%;
 }
 
 .statistics {
-  display: flex;
   height: 100%;
-  align-items: center;
   color: $white-color;
+  @include flex();
   @include for-size(desktop) {
     width: 375px;
     justify-content: space-between;
@@ -25,9 +22,7 @@
 }
 
 .statistics__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex($justcont: space-between);
   color: $white-color;
   position: relative;
   font-weight: 700;
@@ -53,7 +48,6 @@
   }
   &:nth-child(1) {
     margin-right: 25px;
-
     &:before {
       background-image: url('./../images/icons/coins.svg');
       @include for-size(desktop) {
@@ -69,7 +63,6 @@
 .statictics__title {
   width: 70px;
   text-align: center;
-
   @include for-size(desktop) {
     font-size: 18px;
     text-align: left;
@@ -77,8 +70,7 @@
 }
 
 .statistics__money {
-  display: flex;
-  flex-direction: column;
+  @include flex(flex, column, start, start);
   border-radius: 100px 0px 0px 100px;
   background-color: $background-color;
   height: 100%;
@@ -106,10 +98,7 @@
   @include for-size(desktop) {
     display: block;
     font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 1.2;
-    color: $notactive-color;
+    @include font(10px, 500, $notactive-color, 1.2);
   }
 }
 .mobile {

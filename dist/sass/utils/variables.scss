@@ -3,9 +3,40 @@ $main-color: #181723;
 $background-color: #0d0b0f;
 $background-main-color: #262435;
 $notactive-color: #9794c6;
+$btn-plus-color: #21cc14;
+$btn-plus-shadow: rgba(33, 204, 20, 0.5);
+$btn-card-bg: linear-gradient(90deg, #242333 0%, #3c3b53 100%);
+$btn-card-border: #cb4cbc;
+$pages-link-color: #323145;
+$header-link-border: #929094;
+$colorbox-promo: linear-gradient(53.76deg, #ff4910 10.28%, #ff4910 87.14%);
+$colorbox-coin: linear-gradient(
+  227.77deg,
+  rgba(220, 43, 25, 0) 19.26%,
+  #dc2b19 93.74%
+);
 
+$card-box-shadow: rgba(0, 0, 0, 0.4);
+$cards-box-shadow: rgba(0, 0, 0, 0.25);
+$cards-shadow: linear-gradient(
+  180deg,
+  rgba(68, 67, 92, 0) 29.69%,
+  rgba(36, 35, 51, 0) 57.29%,
+  #242333 100%
+);
+$card-container-shadow: linear-gradient(
+  180deg,
+  rgba(68, 67, 92, 0) 84%,
+  rgba(36, 35, 51, 0) 57%,
+  #242333 100%
+);
+
+$link-gradient: linear-gradient(0deg, #f52cbf 0%, rgba(245, 44, 191, 0) 100%);
 $btn-gradient: linear-gradient(90deg, #682fbd 0%, #cb4cbc 100%);
 $btn-plus-gradient: linear-gradient(90deg, #30c325 9.09%, #2c812a 100%);
 $active-link-gradient: linear-gradient(90deg, #f52cbf 0%, #ff7c46 100%);
+
+$scroll-color: #264061 #f0f1f3;
+$scrollbar-thumb-color: #7c8ca0;
 
 $timing: cubic-bezier(0.4, 0, 0.2, 1);
